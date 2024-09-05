@@ -1,0 +1,60 @@
+{
+  "annotations": {
+    "changelogDate": "20240905050410"
+  },
+  "applications": "*",
+  "documentation": "Tabla que almacena la información de asistencia de empleados.",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "options": {
+        "sequenceGeneratorName": "employeeAttendanceIdSeq"
+      }
+    },
+    {
+      "documentation": "Fecha de la asistencia.",
+      "fieldName": "attendanceDate",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "documentation": "Hora de entrada del empleado.",
+      "fieldName": "checkInTime",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "documentation": "Hora de salida del empleado.",
+      "fieldName": "checkOutTime",
+      "fieldType": "Instant"
+    },
+    {
+      "documentation": "Comentarios adicionales o notas.",
+      "fieldName": "comments",
+      "fieldType": "String"
+    }
+  ],
+  "name": "EmployeeAttendance",
+  "relationships": [
+    {
+      "documentation": "La asistencia pertenece a un empleado.",
+      "otherEntityField": "name",
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "documentation": "La asistencia puede tener un estatus (presente, ausente, etc.).",
+      "otherEntityField": "name",
+      "otherEntityName": "status",
+      "relationshipName": "status",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no"
+}

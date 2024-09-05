@@ -1,0 +1,137 @@
+/** Entidad que representa el estatus de algo */
+@readOnly
+entity Status {
+  /** El nombre del estatus. */
+  name String required unique maxlength(50)
+}
+
+/** Entidad que representa el tipo de estatus */
+@readOnly
+entity StatusType {
+  /** El nombre del tipo de estatus. */
+  name String required unique maxlength(50)
+}
+
+/** Relaciones */
+relationship ManyToOne {
+  /** Estatus le pertenece un tipo de estatus. */
+  Status{statusType(name) required} to StatusType
+}
+
+entity VehicleType {
+   /** El nombre del tipo de vehiculo. */
+  descripcion String required unique maxlength(50)
+
+}
+
+entity Vehicle {
+   /** El nombre del vehiculo. */
+  descripcion String required unique maxlength(255)
+
+  /** El modelo del vehiculo */
+  model String required unique maxlength(255)
+
+  /** La placas del vehiculo */
+  plates String required unique maxlength(255)
+
+}
+
+/** Relaciones */
+relationship ManyToOne {
+  /** Vehiculo le pertenece un tipo de vehiculo. */
+  Vehicle{vehicleType(descripcion) required} to VehicleType
+}
+
+
+//Empleados
+
+/** Tabla que almacena información de los tipos de empleado. */
+entity EmployeeType {
+  @SequenceGeneratorName(employeeTypeIdSeq)
+  id Long
+  /** El tipo de empleado. */
+  name String
+}
+
+/** Tabla que almacena información de los empleados. */
+@paginate
+@filter
+entity Employee {
+  @SequenceGeneratorName(employeeIdSeq)
+  id Long
+  /** Clave del empleado. */
+  clave Integer
+  /** Nombre del empleado. */
+  name String maxlength(100)
+  /** Primer Apellido del empleado. */
+  firstSurname String maxlength(100)
+  /** Segundo Apellido del empleado. */
+  secondSurname String maxlength(100)
+  /** La fecha en que se creó. */
+  createdDate Instant required
+  /** La fecha en que se modificó por última vez. */
+  lastModifiedDate Instant
+}
+
+relationship ManyToOne {
+  /** Le pertenece un estatus. */
+  Employee{status(name) required} to Status
+  /** Está asociado con un usuario para la creación. */
+  Employee{created(login) required} to User with builtInEntity
+  /** Asociado con un usuario para última modificación. */
+  Employee{lastModified(login)} to User with builtInEntity
+}
+
+relationship OneToOne {
+  /** Puede estar asociado a un usuario. */
+  Employee{user(login)} to User with builtInEntity
+}
+
+
+/** Tabla que almacena la información de uso de vehículos. */
+entity VehicleUsage {
+  @SequenceGeneratorName(vehicleUsageIdSeq)
+  id Long
+  /** Fecha de solicitud del vehículo. */
+  startDate Instant required
+  /** Fecha de devolución del vehículo (puede ser nulo si aún no se ha devuelto). */
+  endDate Instant
+  /** Descripción o comentarios adicionales sobre el uso del vehículo. */
+  comments String
+}
+
+/** Relaciones */
+relationship ManyToOne {
+  /** Un registro de uso le pertenece a un vehículo. */
+  VehicleUsage{vehicle(plates) required} to Vehicle
+  /** Un registro de uso le pertenece a un empleado. */
+  VehicleUsage{employee(name) required} to Employee
+  /** Un registro de uso tiene un estatus. */
+  VehicleUsage{status(name) required} to Status
+}
+
+
+/** Tabla que almacena la información de asistencia de empleados. */
+entity EmployeeAttendance {
+  @SequenceGeneratorName(employeeAttendanceIdSeq)
+  id Long
+  /** Fecha de la asistencia. */
+  attendanceDate LocalDate required
+  /** Hora de entrada del empleado. */
+  checkInTime Instant required
+  /** Hora de salida del empleado. */
+  checkOutTime Instant
+  /** Comentarios adicionales o notas. */
+  comments String
+}
+
+/** Relaciones */
+relationship ManyToOne {
+  /** La asistencia pertenece a un empleado. */
+  EmployeeAttendance{employee(name) required} to Employee
+}
+
+relationship ManyToOne {
+  /** La asistencia puede tener un estatus (presente, ausente, etc.). */
+  EmployeeAttendance{status(name) required} to Status
+}

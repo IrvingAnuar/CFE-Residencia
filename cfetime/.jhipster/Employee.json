@@ -1,0 +1,96 @@
+{
+  "annotations": {
+    "changelogDate": "20240905041607",
+    "filter": true,
+    "paginate": true
+  },
+  "applications": "*",
+  "documentation": "Tabla que almacena información de los empleados.",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "options": {
+        "sequenceGeneratorName": "employeeIdSeq"
+      }
+    },
+    {
+      "documentation": "Clave del empleado.",
+      "fieldName": "clave",
+      "fieldType": "Integer"
+    },
+    {
+      "documentation": "Nombre del empleado.",
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "documentation": "Primer Apellido del empleado.",
+      "fieldName": "firstSurname",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "documentation": "Segundo Apellido del empleado.",
+      "fieldName": "secondSurname",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "documentation": "La fecha en que se creó.",
+      "fieldName": "createdDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "documentation": "La fecha en que se modificó por última vez.",
+      "fieldName": "lastModifiedDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "name": "Employee",
+  "relationships": [
+    {
+      "documentation": "Puede estar asociado a un usuario.",
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "documentation": "Le pertenece un estatus.",
+      "otherEntityField": "name",
+      "otherEntityName": "status",
+      "relationshipName": "status",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "documentation": "Está asociado con un usuario para la creación.",
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "created",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipWithBuiltInEntity": true
+    },
+    {
+      "documentation": "Asociado con un usuario para última modificación.",
+      "otherEntityField": "login",
+      "otherEntityName": "user",
+      "relationshipName": "lastModified",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipWithBuiltInEntity": true
+    }
+  ],
+  "searchEngine": "no"
+}

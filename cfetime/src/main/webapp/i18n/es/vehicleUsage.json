@@ -1,0 +1,34 @@
+{
+  "cfetimeApp": {
+    "vehicleUsage": {
+      "home": {
+        "title": "Vehicle Usages",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Vehicle Usage",
+        "createOrEditLabel": "Crear o editar Vehicle Usage",
+        "notFound": "Ningún Vehicle Usages encontrado"
+      },
+      "created": "Un nuevo Vehicle Usage ha sido creado con el identificador {{ param }}",
+      "updated": "Un Vehicle Usage ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Vehicle Usage ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Vehicle Usage {{ id }}?"
+      },
+      "detail": {
+        "title": "Vehicle Usage"
+      },
+      "id": "Id",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "comments": "Comments",
+      "vehicle": "Vehicle",
+      "employee": "Employee",
+      "status": "Status",
+      "help": {
+        "startDate": "Fecha de solicitud del vehículo.",
+        "endDate": "Fecha de devolución del vehículo (puede ser nulo si aún no se ha devuelto).",
+        "comments": "Descripción o comentarios adicionales sobre el uso del vehículo."
+      }
+    }
+  }
+}
