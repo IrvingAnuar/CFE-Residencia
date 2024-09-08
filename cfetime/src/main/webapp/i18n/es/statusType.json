@@ -1,0 +1,19 @@
+{
+  "cfetimeApp": {
+    "statusType": {
+      "home": {
+        "title": "Tipos de Estatus",
+        "refreshListLabel": "Refrescar lista",
+        "notFound": "Ningún Tipp de Estatus encontrado"
+      },
+      "detail": {
+        "title": "Tipo de Estatus"
+      },
+      "id": "ID",
+      "name": "Nombre",
+      "help": {
+        "name": "El nombre del tipo de estatus."
+      }
+    }
+  }
+}

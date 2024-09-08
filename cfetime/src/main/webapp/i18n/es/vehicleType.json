@@ -1,0 +1,27 @@
+{
+  "cfetimeApp": {
+    "vehicleType": {
+      "home": {
+        "title": "Tipos de Vehículos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Tipo de Vehículo",
+        "createOrEditLabel": "Crear o editar Tipo de Vehículo",
+        "notFound": "Ningún Tipo de Vehículo encontrado"
+      },
+      "created": "Un nuevo Tipo de Vehículo ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tipo de Vehículo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tipo de Vehículo ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Tipo de Vehículo {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo de Vehículo"
+      },
+      "id": "ID",
+      "descripcion": "Descripcion",
+      "help": {
+        "descripcion": "El nombre del tipo de vehiculo."
+      }
+    }
+  }
+}

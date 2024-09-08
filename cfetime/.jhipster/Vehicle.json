@@ -1,0 +1,42 @@
+{
+  "annotations": {
+    "changelogDate": "20240908201309"
+  },
+  "applications": "*",
+  "fields": [
+    {
+      "documentation": "El nombre del vehiculo.",
+      "fieldName": "descripcion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "documentation": "El modelo del vehiculo",
+      "fieldName": "model",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "documentation": "La placas del vehiculo",
+      "fieldName": "plates",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    }
+  ],
+  "name": "Vehicle",
+  "relationships": [
+    {
+      "documentation": "Vehiculo le pertenece un tipo de vehiculo.",
+      "otherEntityField": "descripcion",
+      "otherEntityName": "vehicleType",
+      "relationshipName": "vehicleType",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no"
+}

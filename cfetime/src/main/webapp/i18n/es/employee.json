@@ -1,0 +1,41 @@
+{
+  "cfetimeApp": {
+    "employee": {
+      "home": {
+        "title": "Empleados",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Empleado",
+        "createOrEditLabel": "Crear o editar Empleado",
+        "notFound": "Ningún Empleados encontrado"
+      },
+      "created": "Un nuevo Empleado ha sido creado con el identificador {{ param }}",
+      "updated": "Un Empleado ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Empleado ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Empleado {{ id }}?"
+      },
+      "detail": {
+        "title": "Empleado"
+      },
+      "id": "Id",
+      "clave": "Clave",
+      "name": "Nombre",
+      "firstSurname": "Primer apellido",
+      "secondSurname": "Segundo apellido",
+      "createdDate": "Fecha de cración",
+      "lastModifiedDate": "Fecha de última modificación",
+      "user": "Usuario",
+      "status": "Estatus",
+      "created": "Creado",
+      "lastModified": "Última modificación",
+      "help": {
+        "clave": "Clave del empleado.",
+        "name": "Nombre del empleado.",
+        "firstSurname": "Primer Apellido del empleado.",
+        "secondSurname": "Segundo Apellido del empleado.",
+        "createdDate": "La fecha en que se creó.",
+        "lastModifiedDate": "La fecha en que se modificó por última vez."
+      }
+    }
+  }
+}

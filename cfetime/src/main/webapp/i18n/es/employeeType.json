@@ -1,0 +1,27 @@
+{
+  "cfetimeApp": {
+    "employeeType": {
+      "home": {
+        "title": "Tipos d eempleados",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Tipo de Empleado",
+        "createOrEditLabel": "Crear o editar Tipo de Empleado",
+        "notFound": "Ningún Tipo de Empleado encontrado"
+      },
+      "created": "Un nuevo Tipo de Emepleado ha sido creado con el identificador {{ param }}",
+      "updated": "Un Tipo de Emepleado ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Tipo de Emepleado ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Tipo de Emepleado {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo de Emepleado"
+      },
+      "id": "Id",
+      "name": "Nombre",
+      "help": {
+        "name": "El tipo de empleado."
+      }
+    }
+  }
+}

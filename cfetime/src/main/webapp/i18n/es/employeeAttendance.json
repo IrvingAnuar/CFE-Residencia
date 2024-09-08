@@ -1,0 +1,35 @@
+{
+  "cfetimeApp": {
+    "employeeAttendance": {
+      "home": {
+        "title": "Asistencia de empleados",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear Nueva Asistencia",
+        "createOrEditLabel": "Crear o editar Nueva Asistencia",
+        "notFound": "Ningún Nueva Asistencia encontrado"
+      },
+      "created": "Una Nueva Asistencia ha sido creado con el identificador {{ param }}",
+      "updated": "Una Nueva Asistencia ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Una Nueva Asistencia ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar la Asistencia {{ id }}?"
+      },
+      "detail": {
+        "title": "Asistencia de empleado"
+      },
+      "id": "Id",
+      "attendanceDate": "Dia de asistencia",
+      "checkInTime": "Hora de llegada",
+      "checkOutTime": "Hora de salida",
+      "comments": "Comentarios",
+      "employee": "Empleado",
+      "status": "Estatus",
+      "help": {
+        "attendanceDate": "Fecha de la asistencia.",
+        "checkInTime": "Hora de entrada del empleado.",
+        "checkOutTime": "Hora de salida del empleado.",
+        "comments": "Comentarios adicionales o notas."
+      }
+    }
+  }
+}

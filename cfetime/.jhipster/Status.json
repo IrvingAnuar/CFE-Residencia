@@ -1,0 +1,30 @@
+{
+  "annotations": {
+    "changelogDate": "20240908201306",
+    "readOnly": true
+  },
+  "applications": "*",
+  "documentation": "Entidad que representa el estatus de algo",
+  "fields": [
+    {
+      "documentation": "El nombre del estatus.",
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    }
+  ],
+  "name": "Status",
+  "relationships": [
+    {
+      "documentation": "Estatus le pertenece un tipo de estatus.",
+      "otherEntityField": "name",
+      "otherEntityName": "statusType",
+      "relationshipName": "statusType",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no"
+}

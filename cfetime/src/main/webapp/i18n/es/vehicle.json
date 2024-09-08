@@ -1,0 +1,32 @@
+{
+  "cfetimeApp": {
+    "vehicle": {
+      "home": {
+        "title": "Vehículos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Vehículo",
+        "createOrEditLabel": "Crear o editar Vehículo",
+        "notFound": "Ningún Vehículo encontrado"
+      },
+      "created": "Un nuevo Vehículo ha sido creado con el identificador {{ param }}",
+      "updated": "Un Vehículo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Vehículo ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Vehículo {{ id }}?"
+      },
+      "detail": {
+        "title": "Vehículo"
+      },
+      "id": "ID",
+      "descripcion": "Descripcion",
+      "model": "Modelo",
+      "plates": "Plates",
+      "vehicleType": "Tipo de Vehículo",
+      "help": {
+        "descripcion": "El nombre del Vehículo.",
+        "model": "El modelo del Vehículo",
+        "plates": "La placas del Vehículo"
+      }
+    }
+  }
+}

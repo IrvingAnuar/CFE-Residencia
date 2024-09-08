@@ -1,0 +1,20 @@
+{
+  "annotations": {
+    "changelogDate": "20240908201307",
+    "readOnly": true
+  },
+  "applications": "*",
+  "documentation": "Entidad que representa el tipo de estatus",
+  "fields": [
+    {
+      "documentation": "El nombre del tipo de estatus.",
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "maxlength"],
+      "fieldValidateRulesMaxlength": "50"
+    }
+  ],
+  "name": "StatusType",
+  "relationships": [],
+  "searchEngine": "no"
+}

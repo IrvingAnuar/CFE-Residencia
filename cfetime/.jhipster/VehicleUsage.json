@@ -1,0 +1,63 @@
+{
+  "annotations": {
+    "changelogDate": "20240908201312"
+  },
+  "applications": "*",
+  "documentation": "Tabla que almacena la información de uso de vehículos.",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "options": {
+        "sequenceGeneratorName": "vehicleUsageIdSeq"
+      }
+    },
+    {
+      "documentation": "Fecha de solicitud del vehículo.",
+      "fieldName": "startDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "documentation": "Fecha de devolución del vehículo (puede ser nulo si aún no se ha devuelto).",
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "documentation": "Descripción o comentarios adicionales sobre el uso del vehículo.",
+      "fieldName": "comments",
+      "fieldType": "String"
+    }
+  ],
+  "name": "VehicleUsage",
+  "relationships": [
+    {
+      "documentation": "Un registro de uso le pertenece a un vehículo.",
+      "otherEntityField": "plates",
+      "otherEntityName": "vehicle",
+      "relationshipName": "vehicle",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "documentation": "Un registro de uso le pertenece a un empleado.",
+      "otherEntityField": "name",
+      "otherEntityName": "employee",
+      "relationshipName": "employee",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    },
+    {
+      "documentation": "Un registro de uso tiene un estatus.",
+      "otherEntityField": "name",
+      "otherEntityName": "status",
+      "relationshipName": "status",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no"
+}
